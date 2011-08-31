@@ -68,6 +68,15 @@
 // Modifications are tagged with "GFM"
 // **************************************************
 
+
+// **************************************************
+// Wiki-Flavored Markdown modifications by FND
+// http://fnd.github.com/wiki-flavored-markdown/
+//
+// Modifications are tagged with "WFM"
+// **************************************************
+
+
 //
 // Showdown namespace
 //
@@ -153,6 +162,9 @@ this.makeHtml = function(text) {
 
 	// attacklab: Restore tildes
 	text = text.replace(/~T/g,"~");
+
+	// ** WFM **  WikiLinks
+	text = text.replace(/((?:[A-Z][a-z]+){2,})/g, '<a href="$1">$1</a>');
 
   // ** GFM **  Auto-link URLs and emails
   text = text.replace(/https?\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!]/g, function(wholeMatch,matchIndex){
