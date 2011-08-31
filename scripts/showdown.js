@@ -166,6 +166,9 @@ this.makeHtml = function(text) {
 	// ** WFM **  WikiLinks
 	text = text.replace(/((?:[A-Z][a-z]+){2,})/g, '<a href="$1">$1</a>');
 
+	// ** WFM **  free links with custom link text
+	text = text.replace(/\[\[(.+?)\|(.+?)\]\]/g, '<a href="$2">$1</a>');
+
 	// ** WFM **  free links
 	text = text.replace(/\[\[(.+?)\]\]/g, '<a href="$1">$1</a>');
 
