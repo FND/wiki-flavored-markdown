@@ -16,8 +16,8 @@
 	<h1>WFM Live Preview</h1>
 	<p>
 		This page provides a live preview for
-		<a href="https://github.com/FND/wiki-flavored-markdown">Wiki-Flavored Markdown</a>,
-		rendered client-side using JavaScript.
+		<a href="https://github.com/FND/wiki-flavored-markdown">Wiki-Flavored Markdown</a>
+		(WFM), rendered client-side using JavaScript.
 	</p>
 	<p>
 		The majority of the credit goes to the wonderful
@@ -26,35 +26,70 @@
 		<a href="http://github.github.com/github-flavored-markdown/">GitHub's adaptation</a>.
 	</p>
 
-	<h2>User input</h2>
+	<h2>Differences from Standard Markdown</h2>
+
+	<h3>wiki links</h3>
+	<p>
+		WFM supports three types of
+		<a href="http://c2.com/cgi/wiki?WikiLink">wiki links</a>:
+	</p>
+	<ul>
+		<li>automatic detection via CamelCase: <code>PageName</code></li>
+		<li>free links surrounded by brackets: <code>[[page name]]</code></li>
+		<li>free links with custom link text: <code>[[my page|page name]]</code></li>
+	</ul>
+
+	<h3>URL auto-linking</h3>
+	<p>
+		WFM will auto-link standard URLs, so if you want to link to a URL
+		(instead of setting link text), you can simply enter the URL and it
+		will be turned into a link to that URL.
+	</p>
+
+	<h3>fenced code blocks</h3>
+	<p>
+		Markdown converts text with four spaces at the front of each line to
+		code blocks. WFM supports that, but it also supports fenced blocks.
+		Just wrap your code blocks in <code>```</code> and you won't need to
+		indent manually to trigger a code block.
+	</p>
+
+	<h3>multiple underscores in words</h3>
+	<p>
+		In order to avoid confusion, italicizing just <em>parts</em> of a word
+		is not possible; WFM ignores multiple underscores in words.
+	</p>
+
+	<h2>User Input</h2>
 	<textarea id="user_input"></textarea>
 
-	<h2>Live preview</h2>
+	<h3>Live Preview</h3>
 	<div id="result"></div>
 
-	<h2>HTML</h2>
+	<h3>HTML</h3>
 	<textarea id="html_result"></textarea>
 
 
 	<blockquote id="sample">
-#### Underscores
+#### underscores
 
 * this should have _emphasis_
 * this_should_not
 * _nor_should_this
 
-#### Auto-linking
+#### auto-linking
 
 * a non-Markdown link: http://github.com/blog
 * this one is [a markdown link](http://github.com/blog)
 * e-mail test: support@github.com
 
-#### Wiki Links
+#### wiki links
 
 * a traditional WikiLink
 * a [[free link]]
 * a free link with [[custom link text|free link]]
 	</blockquote>
+
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
 	<script src="scripts/showdown.js"></script>
