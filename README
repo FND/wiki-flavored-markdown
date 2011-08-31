@@ -1,6 +1,7 @@
-Wiki-Flavored Markdown (WFM)
-https://github.com/FND/wiki-flavored-markdown
-client-side Markdown renderer, augmented with minor additions for use in wikis
+[Wiki-Flavored Markdown (WFM)](https://github.com/FND/wiki-flavored-markdown)
+
+client-side [Markdown](http://daringfireball.net/projects/markdown/) renderer,
+augmented with minor additions for use in wikis
 
 fork of
 [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/)
