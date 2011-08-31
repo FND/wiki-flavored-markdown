@@ -1,0 +1,6 @@
+client-side Markdown renderer, augmented with minor additions for use in wikis
+
+fork of
+[GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/)
+(which in turn is a fork of
+[Showdown](http://softwaremaniacs.org/playground/showdown-highlight/))
