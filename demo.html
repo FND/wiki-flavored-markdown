@@ -5,6 +5,11 @@
 	<meta charset="utf-8">
 	<title>Wiki-Flavored Markdown</title>
 	<style>
+		dt {
+			margin: 1em 0 0.5em;
+			font-weight: bold;
+		}
+
 		textarea {
 			width: 90%;
 			height: 20em;
@@ -27,38 +32,41 @@
 	</p>
 
 	<h2>Differences from Standard Markdown</h2>
+	<dl>
+		<dt>wiki links</dt>
+		<dd>
+			<p>
+				WFM supports three types of
+				<a href="http://c2.com/cgi/wiki?WikiLink">wiki links</a>:
+			</p>
+			<ul>
+				<li>automatic detection via CamelCase: <code>PageName</code></li>
+				<li>free links surrounded by brackets: <code>[[page name]]</code></li>
+				<li>free links with custom link text: <code>[[my page|page name]]</code></li>
+			</ul>
+		</dd>
 
-	<h3>wiki links</h3>
-	<p>
-		WFM supports three types of
-		<a href="http://c2.com/cgi/wiki?WikiLink">wiki links</a>:
-	</p>
-	<ul>
-		<li>automatic detection via CamelCase: <code>PageName</code></li>
-		<li>free links surrounded by brackets: <code>[[page name]]</code></li>
-		<li>free links with custom link text: <code>[[my page|page name]]</code></li>
-	</ul>
+		<dt>URL auto-linking</dt>
+		<dd>
+			WFM will auto-link standard URLs, so if you want to link to a URL
+			(instead of setting link text), you can simply enter the URL and it
+			will be turned into a link to that URL.
+		</dd>
 
-	<h3>URL auto-linking</h3>
-	<p>
-		WFM will auto-link standard URLs, so if you want to link to a URL
-		(instead of setting link text), you can simply enter the URL and it
-		will be turned into a link to that URL.
-	</p>
+		<dt>fenced code blocks</dt>
+		<dd>
+			Markdown converts text with four spaces at the front of each line to
+			code blocks. WFM supports that, but it also supports fenced blocks.
+			Just wrap your code blocks in <code>```</code> and you won't need to
+			indent manually to trigger a code block.
+		</dd>
 
-	<h3>fenced code blocks</h3>
-	<p>
-		Markdown converts text with four spaces at the front of each line to
-		code blocks. WFM supports that, but it also supports fenced blocks.
-		Just wrap your code blocks in <code>```</code> and you won't need to
-		indent manually to trigger a code block.
-	</p>
-
-	<h3>multiple underscores in words</h3>
-	<p>
-		In order to avoid confusion, italicizing just <em>parts</em> of a word
-		is not possible; WFM ignores multiple underscores in words.
-	</p>
+		<dt>multiple underscores in words</dt>
+		<dd>
+			In order to avoid confusion, italicizing just <em>parts</em> of a word
+			is not possible; WFM ignores multiple underscores in words.
+		</dd>
+	</dl>
 
 	<h2>User Input</h2>
 	<textarea id="user_input"></textarea>
