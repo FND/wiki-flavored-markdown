@@ -1,6 +1,20 @@
+Wiki-Flavored Markdown (WFM)
+https://github.com/FND/wiki-flavored-markdown
 client-side Markdown renderer, augmented with minor additions for use in wikis
 
 fork of
 [GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/)
 (which in turn is a fork of
 [Showdown](http://softwaremaniacs.org/playground/showdown-highlight/))
+
+
+Syntax Additions
+================
+
+see [demo](http://fnd.github.com/wiki-flavored-markdown/) for details
+
+* URL auto-linking
+* wiki links:
+  `CamelCase`, `[[free links]]`, `[[custom free link text|free links]]`
+* fenced code blocks
+* multiple underscores in words

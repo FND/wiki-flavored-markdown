@@ -4,14 +4,25 @@
 <head>
 	<meta charset="utf-8">
 	<title>Wiki-Flavored Markdown</title>
+	<style>
+		dt {
+			margin: 1em 0 0.5em;
+			font-weight: bold;
+		}
+
+		textarea {
+			width: 90%;
+			height: 20em;
+		}
+	</style>
 </head>
 
 <body>
 	<h1>WFM Live Preview</h1>
 	<p>
 		This page provides a live preview for
-		<a href="https://github.com/FND/wiki-flavored-markdown">Wiki-Flavored Markdown</a>,
-		rendered client-side using JavaScript.
+		<a href="https://github.com/FND/wiki-flavored-markdown">Wiki-Flavored Markdown</a>
+		(WFM), rendered client-side using JavaScript.
 	</p>
 	<p>
 		The majority of the credit goes to the wonderful
@@ -20,37 +31,73 @@
 		<a href="http://github.github.com/github-flavored-markdown/">GitHub's adaptation</a>.
 	</p>
 
-	<h2>User input</h2>
+	<h2>Differences from Standard Markdown</h2>
+	<dl>
+		<dt>wiki links</dt>
+		<dd>
+			<p>
+				WFM supports three types of
+				<a href="http://c2.com/cgi/wiki?WikiLink">wiki links</a>:
+			</p>
+			<ul>
+				<li>automatic detection via CamelCase: <code>PageName</code></li>
+				<li>free links surrounded by brackets: <code>[[page name]]</code></li>
+				<li>free links with custom link text: <code>[[my page|page name]]</code></li>
+			</ul>
+		</dd>
+
+		<dt>URL auto-linking</dt>
+		<dd>
+			WFM will auto-link standard URLs, so if you want to link to a URL
+			(instead of setting link text), you can simply enter the URL and it
+			will be turned into a link to that URL.
+		</dd>
+
+		<dt>fenced code blocks</dt>
+		<dd>
+			Markdown converts text with four spaces at the front of each line to
+			code blocks. WFM supports that, but it also supports fenced blocks.
+			Just wrap your code blocks in <code>```</code> and you won't need to
+			indent manually to trigger a code block.
+		</dd>
+
+		<dt>multiple underscores in words</dt>
+		<dd>
+			In order to avoid confusion, italicizing just <em>parts</em> of a word
+			is not possible; WFM ignores multiple underscores in words.
+		</dd>
+	</dl>
+
+	<h2>User Input</h2>
 	<textarea id="user_input"></textarea>
 
-	<h2>Live preview</h2>
+	<h3>Live Preview</h3>
 	<div id="result"></div>
 
-	<h2>HTML</h2>
+	<h3>HTML</h3>
 	<textarea id="html_result"></textarea>
 
 
 	<blockquote id="sample">
-#### Underscores
-this should have _emphasis_
-this_should_not
-_nor_should_this
+#### underscores
 
-#### Autolinking
-a non-markdown link: http://github.com/blog
-this one is [a markdown link](http://github.com/blog)
-Email test: support@github.com
+* this should have _emphasis_
+* this_should_not
+* _nor_should_this
 
-#### Commit links
-c4149e7bac80fcd1295060125670e78d3f15bf2e
-tekkub@c4149e7bac80fcd1295060125670e78d3f15bf2e
-mojombo/god@c4149e7bac80fcd1295060125670e78d3f15bf2e
+#### auto-linking
 
-#### Issue links
-issue #1
-tekkub#1
-mojombo/god#1
+* a non-Markdown link: http://github.com/blog
+* this one is [a markdown link](http://github.com/blog)
+* e-mail test: support@github.com
+
+#### wiki links
+
+* a traditional WikiLink
+* a [[free link]]
+* a free link with [[custom link text|free link]]
 	</blockquote>
+
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
 	<script src="scripts/showdown.js"></script>
