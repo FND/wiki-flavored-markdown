@@ -166,6 +166,9 @@ this.makeHtml = function(text) {
 	// ** WFM **  WikiLinks
 	text = text.replace(/((?:[A-Z][a-z]+){2,})/g, '<a href="$1">$1</a>');
 
+	// ** WFM **  free links
+	text = text.replace(/\[\[(.+?)\]\]/g, '<a href="$1">$1</a>');
+
   // ** GFM **  Auto-link URLs and emails
   text = text.replace(/https?\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!]/g, function(wholeMatch,matchIndex){
     var left = text.slice(0, matchIndex), right = text.slice(matchIndex)
