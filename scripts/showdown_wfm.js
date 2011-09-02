@@ -77,6 +77,8 @@
 // **************************************************
 
 
+Showdown = (function() {
+
 //
 // Showdown namespace
 //
@@ -1328,3 +1330,7 @@ var escapeCharacters_callback = function(wholeMatch,m1) {
 }
 
 } // end of Showdown.converter
+
+return Showdown;
+
+}()); // end of module wrapper
